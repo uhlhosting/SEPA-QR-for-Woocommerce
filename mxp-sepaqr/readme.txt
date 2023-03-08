@@ -22,7 +22,7 @@ php GD2 extension must be installed as the QR-Code generator by [fellwell15](htt
 Nothing special:
 * Click install and activate
 # Translation
-The plugin does not come with translations yet. So if you need a translation open the muxp-sepaqr.php file, find the few words you need to translate and translate to your purpose.
+The plugin does not come with translations yet. So if you need a translation open the uhl-sepaqr.php file, find the few words you need to translate and translate to your purpose.
 The problem is that the translations will be lost after an update. So your programing help for proper localization is highly appreciated! Just do it and make a pull request on [GitHub](https://github.com/Coernel82/SEPA-QR-for-Woocommerce)
 # What it does
 places an image with the SEPA-QR-Code in the
@@ -47,12 +47,12 @@ I use a plugin for [PDF-invoices and packaging slips](https://docs.wpovernight.c
 /* QR-Code in invoices */
 add_action( 'wpo_wcpdf_after_order_details', 'wpo_wcpdf_qr_code', 10, 2 );
 function wpo_wcpdf_qr_code ($document_type, $order) {
-	require_once WP_PLUGIN_DIR . '/mxp-sepaqr/muxp-sepaqr.php';
-    $muxp_order = wc_get_order( $order);
+	require_once WP_PLUGIN_DIR . '/mxp-sepaqr/uhl-sepaqr.php';
+    $uhl_order = wc_get_order( $order);
 	$order_id  = $order->get_id();
- 	if ( !empty($muxp_order->get_total()) && (float)$order->get_total() > 0 ) {
-		echo '<img class="bacs-qrcode" src="' . muxp_get_qrcode($order->get_total(), $order_id) . '" alt="qr-code"></p>';
-	} 
+ 	if ( !empty($uhl_order->get_total()) && (float)$order->get_total() > 0 ) {
+		echo '<img class="bacs-qrcode" src="' . uhl_get_qrcode($order->get_total(), $order_id) . '" alt="qr-code"></p>';
+	}
 }
 ```
 
@@ -68,7 +68,7 @@ Install the plugin and order s.th. in your shop using BACS (direct bank transfer
 www.yourwebpage.de/?mxp_qr=something  = creates a real QR with dummyvalues 11-11
 [Working example](https://www.musicalexperten.de/?mxp_qr=something)
 ## To find an existing cached QR-Code, query for a valid md5 string. If it does not exist in cache or transients, a sad smiley will appear.
-www.yourwebpage.de/?mxp_qr=351436ef4b279e1811a6c68a2dd58b1b 
+www.yourwebpage.de/?mxp_qr=351436ef4b279e1811a6c68a2dd58b1b
 results in a sad smiley. [Working example](https://www.musicalexperten.de/?mxp_qr=351436ef4b279e1811a6c68a2dd58b1b)
 
 # Remarks

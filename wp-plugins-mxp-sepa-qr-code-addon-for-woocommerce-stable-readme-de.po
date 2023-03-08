@@ -43,7 +43,7 @@ msgstr ""
 
 #. Found in description list item.
 msgid "the prefix mxp is used throghout the plugin to avoid collisions with other plugins and functions. mxp stands for www.musicalexperten.de (musical experts). Remember where you've seen it first! ;-)"
-msgstr "Die Vorsilbe muxp wird im gesamten Plugin genutzt um Kollisionen mit anderen Plugins und Funktionen zu vermeiden. muxp steht für www.musicalexperten.de. Also: Vergiss nicht, wo du es zuerst gesehen hast! ;-)"
+msgstr "Die Vorsilbe uhl wird im gesamten Plugin genutzt um Kollisionen mit anderen Plugins und Funktionen zu vermeiden. uhl steht für www.musicalexperten.de. Also: Vergiss nicht, wo du es zuerst gesehen hast! ;-)"
 
 #. Found in description list item.
 msgid "plugin registers a get-parameter (configurable, default mxp_qr) for testing purposes and, if desired, to create links to the cached QR codes."
@@ -165,8 +165,8 @@ msgstr "der QR-Code wird zur WooCommerce Bestellbestätigungsemail hinzugefügt"
 
 #. Found in changelog list item.
 #, gp-priority: low
-msgid "added prefix muxp to the bacs-qrcode css class for the QR code. If you have used .bacs-qrcode you have to change it to muxp-bacs-qrcode"
-msgstr "muxp-Vorsilbe zur bacs-qrcode CSS-Klasse für den QR-Code hinzugefügt. Wenn du .bacs-qrcode genutzt hast, musst du die KLasse zu muxp-bacs-qrcode ändern."
+msgid "added prefix uhl to the bacs-qrcode css class for the QR code. If you have used .bacs-qrcode you have to change it to uhl-bacs-qrcode"
+msgstr "uhl-Vorsilbe zur bacs-qrcode CSS-Klasse für den QR-Code hinzugefügt. Wenn du .bacs-qrcode genutzt hast, musst du die KLasse zu uhl-bacs-qrcode ändern."
 
 #. Found in changelog list item.
 #, gp-priority: low

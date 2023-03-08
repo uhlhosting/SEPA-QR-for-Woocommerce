@@ -36,13 +36,13 @@ I use a plugin for [PDF-invoices and packaging slips](https://docs.wpovernight.c
 /* QR-Code in invoices */
 add_action( 'wpo_wcpdf_after_order_details', 'wpo_wcpdf_qr_code', 10, 2 );
 function wpo_wcpdf_qr_code ($document_type, $order) {
-	require_once WP_PLUGIN_DIR . '/mxp-sepa-qr-code-addon-for-woocommerce/muxp-sepaqr.php';
-    $muxp_order = wc_get_order( $order);
+	require_once WP_PLUGIN_DIR . '/mxp-sepa-qr-code-addon-for-woocommerce/uhl-sepaqr.php';
+    $uhl_order = wc_get_order( $order);
 	$order_id  = $order->get_id();
- 	if ( !empty($muxp_order->get_total()) && (float)$order->get_total() > 0 ) {
+ 	if ( !empty($uhl_order->get_total()) && (float)$order->get_total() > 0 ) {
 		echo '<h1>QR-Code for your online banking app<h1>';
-		echo '<img class="bacs-qrcode" src="' . esc_attr(muxp_get_qrcode($order->get_total(), $order_id)) . '" alt="qr-code"></p>';
-	} 
+		echo '<img class="bacs-qrcode" src="' . esc_attr(uhl_get_qrcode($order->get_total(), $order_id)) . '" alt="qr-code"></p>';
+	}
 }
 ```
 
@@ -61,7 +61,7 @@ Install the plugin and order s.th. in your shop using BACS (direct bank transfer
 www.yourwebpage.de/?mxp_qr=something  = creates a real QR with dummyvalues 11-11
 [Working example](https://www.musicalexperten.de/?mxp_qr=something)
 ## To find an existing cached QR-Code, query for a valid md5 string. If it does not exist in cache or transients, a sad smiley will appear.
-www.yourwebpage.de/?mxp_qr=351436ef4b279e1811a6c68a2dd58b1b 
+www.yourwebpage.de/?mxp_qr=351436ef4b279e1811a6c68a2dd58b1b
 results in a sad smiley. [Working example](https://www.musicalexperten.de/?mxp_qr=351436ef4b279e1811a6c68a2dd58b1b)
 
 # Remarks
